@@ -22,8 +22,8 @@ Build the Docker image.
 | `TITLE_SIZE`          | No        | `18`                 | Top left overlay text font size.                                                   |
 | `TITLE_COLOR`         | No        | `orange`             | Top left overlay text color.                                                       |
 | `DEBUG`               | No        |                      | Show debug overlay on top right. To enable, set to `true`.                         |
-| `LOCAL`               | No        |                      | Stream as a local HTTP MPEGTS server instead of Twitch. To enable, set to `true`.  |
-| `LOCAL_PORT`          | No        | `38000`              | Set the local HTTP MPEGTS server port.                                             |
+| `LOCAL`               | No        |                      | Stream a local UDP MPEGTS instead of Twitch. To enable, set to `true`.             |
+| `LOCAL_PORT`          | No        | `38000`              | Set the local UDP MPEGTS port.                                                     |
 | `CHAT_CHANNEL`        | Yes       |                      | Your Twitch.tv stream channel name (your username).                                |
 | `CHAT_MODS_ONLY`      | No        |                      | Only allows chat moderators to control the bot. To enable, set to `true`.          |
 | `CHAT_PREFIX`         | No        |                      | Bot commands must be prefixed with this to control the bot. i.e. `!`.              |
