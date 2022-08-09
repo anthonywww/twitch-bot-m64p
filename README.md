@@ -91,7 +91,6 @@ docker run --rm -it \
 	-e TITLE="Majoras Mask" \
 	-e TITLE_COLOR="purple" \
 	-e CHAT_CHANNEL="twitchplaysmajora" \
-	-e CHAT_NICKNAME="Tatl" \
 	twitch-bot-m64p
 ```
 
