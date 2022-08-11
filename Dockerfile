@@ -32,11 +32,24 @@ RUN cd /tmp \
 	&& make all \
 	&& make install \
 	&& cd /tmp \
+	&& echo "M64P: RSP HLE" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-rsp-hle \
+	&& cd mupen64plus-rsp-hle/projects/unix/ \
+	&& make all \
+	&& make install \
+	&& cd /tmp \
 	&& echo "M64P: VIDEO RICE" \
 	&& git clone https://github.com/mupen64plus/mupen64plus-video-rice \
 	&& cd mupen64plus-video-rice/projects/unix/ \
 	&& make all \
-	&& make install 
+	&& make install \
+	&& cd /tmp \
+	&& echo "M64P: VIDEO GLIDE64 MK2" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-video-glide64mk2 \
+	&& cd mupen64plus-video-glide64mk2/projects/unix/ \
+	&& make all \
+	&& make install
+	
 
 # Setup PulseAudio
 RUN mkdir -p /var/run/dbus \
