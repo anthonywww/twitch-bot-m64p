@@ -4,7 +4,7 @@ LABEL description="Twitch Bot for Playing Mupen64Plus Games"
 LABEL maintainer="Anthony Waldsmith <awaldsmith@protonmail.com>"
 
 RUN apt update -yq \
-	&& apt install -y git curl tmux xvfb ffmpeg coreutils binutils python3 python-is-python3 python3-pip libminizip1 libglu1 pulseaudio dbus xdotool pkg-config libpng-dev libsdl-dev libfreetype-dev nasm libboost-dev
+	&& apt install -y git curl tmux xvfb ffmpeg coreutils binutils python3 python-is-python3 python3-pip libminizip1 libglu1 pulseaudio dbus xdotool pkg-config libpng-dev libsdl-dev libfreetype-dev nasm libboost-dev libboost-filesystem-dev libboost-system-dev
 
 # Install Mupen64Plus
 RUN cd /tmp \
