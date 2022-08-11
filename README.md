@@ -83,7 +83,7 @@ A few examples:
 Run the container as production.
 Where `TWITCH_CLIENT_ID` and `TWITCH_SECRET` is provided by your dev.twitch.tv application.
 ```sh
-docker run --rm -it \
+docker run -d --name majoras-mask \
 	-v "/home/user/Desktop/majoras_mask.z64:/mnt/rom.z64:ro" \
 	-e TWITCH_CLIENT_ID="abcdef" \
 	-e TWITCH_OAUTH_SECRET="oauth:ghijklm" \

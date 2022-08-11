@@ -89,7 +89,7 @@ rm /tmp/m64pdump.txt
 
 
 # Start mupen64plus
-tmux new-session -d -s "xvfb" -- xvfb-run --server-args ":${SCREEN_NUM} -auth /tmp/xvfb.auth -ac -screen 0 800x600x24" -- mupen64plus --noosd --fullscreen --resolution 800x600 /mnt/rom.z64
+tmux new-session -d -s "xvfb" -- xvfb-run --server-args ":${SCREEN_NUM} -auth /tmp/xvfb.auth -ac -screen 0 800x600x24" -- mupen64plus --noosd --fullscreen --set Video-Rice[LoadHiResTextures]=True --resolution 800x600 /mnt/rom.z64
 
 
 if [[ ! -z "${DEBUG}" ]]; then

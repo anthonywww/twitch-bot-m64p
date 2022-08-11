@@ -3,22 +3,40 @@ LABEL name="twitch-bot-m64p"
 LABEL description="Twitch Bot for Playing Mupen64Plus Games"
 LABEL maintainer="Anthony Waldsmith <awaldsmith@protonmail.com>"
 
-ENV M64P_DOWNLOAD=https://github.com/mupen64plus/mupen64plus-core/releases/download/2.5.9/mupen64plus-bundle-linux64-2.5.9.tar.gz
-
 RUN apt update -yq \
-	&& apt install -y git curl tmux xvfb ffmpeg coreutils binutils python3 python-is-python3 python3-pip libminizip1 libglu1 pulseaudio dbus xdotool
-
-ADD ${M64P_DOWNLOAD} /tmp/m64p.tar.gz
+	&& apt install -y git curl tmux xvfb ffmpeg coreutils binutils python3 python-is-python3 python3-pip libminizip1 libglu1 pulseaudio dbus xdotool pkg-config libpng-dev libsdl-dev libfreetype-dev nasm
 
 # Install Mupen64Plus
 RUN cd /tmp \
-	&& tar xzf m64p.tar.gz \
-	&& rm m64p.tar.gz \
-	&& cd mupen* \
-	&& chmod +x install.sh \
-	&& ./install.sh \
-	&& cd .. \
-	&& rm -rf mupen*
+	&& echo "M64P: CORE" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-core \
+	&& cd mupen64plus-core/projects/unix/ \
+	&& make all \
+	&& make install \
+	&& cd /tmp \
+	&& echo "M64P: UI-CONSOLE" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-ui-console \
+	&& cd mupen64plus-ui-console/projects/unix/ \
+	&& make all \
+	&& make install \
+	&& cd /tmp \
+	&& echo "M64P: INPUT SDL" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-input-sdl \
+	&& cd mupen64plus-input-sdl/projects/unix/ \
+	&& make all \
+	&& make install \
+	&& cd /tmp \
+	&& echo "M64P: AUDIO SDL" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-audio-sdl \
+	&& cd mupen64plus-audio-sdl/projects/unix/ \
+	&& make all \
+	&& make install \
+	&& cd /tmp \
+	&& echo "M64P: VIDEO RICE" \
+	&& git clone https://github.com/mupen64plus/mupen64plus-video-rice \
+	&& cd mupen64plus-video-rice/projects/unix/ \
+	&& make all \
+	&& make install 
 
 # Setup PulseAudio
 RUN mkdir -p /var/run/dbus \
