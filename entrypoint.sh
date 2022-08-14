@@ -116,8 +116,8 @@ fi
 # Start FFMPEG
 tmux new-session -d -s "ffmpeg" -- ffmpeg -y -f pulse -i loopback.monitor -c:a aac -strict experimental \
 	-video_size 800x600 -framerate 30 -f x11grab -i :${SCREEN_NUM} -preset ultrafast -tune zerolatency -b 900k -threads 0 \
-	-vf "[in] \
-	drawtext=text='${TITLE}':fontcolor=${TITLE_COLOR}:fontsize=${TITLE_SIZE}:box=1:boxborderw=${DEBUG_BOX_BORDER}:boxcolor=black@${DEBUG_BOX_BACKGROUND}:x=2:y=2${ADDITIONAL_DRAWTEXT}" ${FFMPEG_OUTPUT} >> ffmpeg.log
+	-report -vf "[in] \
+	drawtext=text='${TITLE}':fontcolor=${TITLE_COLOR}:fontsize=${TITLE_SIZE}:box=1:boxborderw=${DEBUG_BOX_BORDER}:boxcolor=black@${DEBUG_BOX_BACKGROUND}:x=2:y=2${ADDITIONAL_DRAWTEXT}" ${FFMPEG_OUTPUT}
 
 tmux new-session -s "bot" -- python3 src/bot.py
 
