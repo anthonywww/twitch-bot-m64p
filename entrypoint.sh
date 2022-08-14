@@ -86,6 +86,7 @@ GAME_ROM_SIZE="$(cat /tmp/m64pdump.txt | awk '/Core: Rom size:/{printf "%s", $4}
 GAME_CARTRIDGE_ID="$(cat /tmp/m64pdump.txt | awk '/Core: Cartridge_ID:/{printf "%s", $3}')"
 GAME_CLOCKRATE="$(cat /tmp/m64pdump.txt | awk '/Core: ClockRate/{printf "%s", $4}')"
 rm /tmp/m64pdump.txt
+mkdir -p /root/.local/share/mupen64plus/hires_texture/ZELDA\ MAJORA\'S\ MASK/
 
 
 # Start mupen64plus
