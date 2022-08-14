@@ -156,7 +156,7 @@ class Bot(commands.Bot):
 			
 			# Buttons handler
 			
-			if not parts[0] == "a" or not parts[0] == "b" or not parts[0] == "l" or not parts[0] == "r" or not parts[0] == "z" or not parts[0] == "up" or not parts[0] == "down" or not parts[0] == "left" or not parts[0] == "right" or not parts[0] == "cup" or not parts[0] == "cdown" or not parts[0] == "cleft" or not parts[0] == "cright" or not parts[0] == "start":
+			if not parts[0] == "a" and not parts[0] == "b" and not parts[0] == "l" and not parts[0] == "r" and not parts[0] == "z" and not parts[0] == "up" and not parts[0] == "down" and not parts[0] == "left" and not parts[0] == "right" and not parts[0] == "cup" and not parts[0] == "cdown" and not parts[0] == "cleft" and not parts[0] == "cright" and not parts[0] == "start":
 				return
 			
 			commands = []
