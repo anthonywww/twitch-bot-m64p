@@ -156,6 +156,9 @@ class Bot(commands.Bot):
 			
 			# Buttons handler
 			
+			if not parts[0] == "a" or not parts[0] == "b" or not parts[0] == "l" or not parts[0] == "r" or not parts[0] == "z" or not parts[0] == "up" or not parts[0] == "down" or not parts[0] == "left" or not parts[0] == "right" or not parts[0] == "cup" or not parts[0] == "cdown" or not parts[0] == "cleft" or not parts[0] == "cright" or not parts[0] == "start":
+				return
+			
 			commands = []
 			
 			for i in range(len(parts)):
